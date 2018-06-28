@@ -7,7 +7,7 @@
     "react-dom": "^16.4.1",
     "react-scripts": "1.1.4"
   },
-  "homepage" : "http://127.0.0.1:5500/reactjs/build/",
+  "homepage" : "https://cnblackxp.github.io/arabia-giphy/reactjs/build/",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
