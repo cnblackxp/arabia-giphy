@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Arabia Giphy</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <nav class="navbar">
+    <img class="logo" src="assets/logo.png" >
+    <a class="sidebar-btn" onclick="openSidebar()"><img src="assets/menu-icon.png"></a>
+  </nav>
+  <div class="container">
+    <div id="img-container" class="row">
+        <div class='loading'>Loading ...</div>
+    </div>
+  </div>
+  
+  <div class="sidebar sidebar-collapsed">
+    <ul class="sidebar-list"> 
+      <li onclick="closeSidebar()"><b>Back</b></li>
+      <li data-search="weather" class="selected">Weather</li>
+      <li data-search="Forecast">Forecast</li>
+      <li data-search="storms">Storms</li>
+      <li data-search="hurrican">Hurrican</li>
+      <li data-search="heat+wave">Heat Wave</li>
+    </ul>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>
