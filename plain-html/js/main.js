@@ -39,7 +39,7 @@ const renderImages = (searchTerm, element) => {
     }
     
     img_container.innerHTML = "<div class='loading'>Loading ...</div>";
-    load({ url: `http://api.giphy.com/v1/gifs/search?api_key=MnXeNoIc0AxJaRWF8zkl2WXcUV7Cpx5Y&q=${searchTerm}&limit=24` })
+    load({ url: `https://api.giphy.com/v1/gifs/search?api_key=MnXeNoIc0AxJaRWF8zkl2WXcUV7Cpx5Y&q=${searchTerm}&limit=24` })
       .then(result => JSON.parse(result))
       .then(json => json.data)
       .then(imgs => {
