@@ -43,7 +43,7 @@ body {
 
 .exit-btn {
   position: absolute;
-  top:-20px; right: 0;
+  top:-10px; right: -10px;
   color: white;
   width: 20px;
   border-radius: 50%;

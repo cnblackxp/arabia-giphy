@@ -28,6 +28,7 @@ const openSidebar = () => {
 }
 const closeSidebar = () => {
   sidebar.classList.add('sidebar-collapsed');
+  removeFullImageView();
 }
 
 const load = (options) =>
@@ -41,7 +42,7 @@ const load = (options) =>
 
 
 const viewImage = (url, description) => {
-  document.querySelector('.full-img').src = "assets/noimage.png";
+  document.querySelector('.full-img').src = "assets/logo.png";
   document.querySelector('.full-img-view').classList.remove('hidden');
   setTimeout(() => document.querySelector('.full-img').src = url, 10);
   document.querySelector('.full-img-view > .img-container > p').innerText = description;
@@ -61,7 +62,7 @@ const renderImages = (searchTerm, element) => {
       .then(result => JSON.parse(result))
       .then(json => json.data)
       .then(imgs => {
-        console.log(imgs);
+        // console.log(imgs);
         let html = "";
         let els = 0;
         imgs.forEach((el, i) => {
@@ -70,8 +71,11 @@ const renderImages = (searchTerm, element) => {
           if (els === 0)
             html += '<div class="column">';
           els++;
-          const img = el.images.preview_webp.url;
-          html += `<img src="${img}" class="img" onclick="viewImage('${el.images.original.url}', '${el.id}')" style="width:100%">`;
+          let img = el.images.preview_webp.url;
+          
+          if (img.indexOf('null') !== -1)
+            img = el.images.preview_gif.url;
+          html += `<img src="${img}" class="img" onclick="viewImage('${el.images.original.url}', '${el.title}')" style="width:100%">`;
           if (els === 6) {
             html += '</div>';
             els = 0;
